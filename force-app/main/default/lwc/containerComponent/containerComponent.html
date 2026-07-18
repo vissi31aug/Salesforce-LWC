@@ -1,0 +1,14 @@
+<template>
+
+    <lightning-card class="slds-p-around-medium">
+        Container Component <br />
+        Did I find any product: {productFound} {laptopList}
+        <template for:each={laptopList} for:item="laptop">
+            <p key={laptop.id}> {laptop.name} </p>
+        </template>
+        <c-child-container>
+
+        </c-child-container>
+    </lightning-card>
+
+</template>

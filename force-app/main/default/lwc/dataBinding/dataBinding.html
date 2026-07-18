@@ -1,0 +1,22 @@
+<template>
+    <lightning-card class="slds-card">
+        <div class="slds-p-around_medium lgc-bg">
+            <p><lightning-input value={memberStatus} onchange={getStatus} type="text"
+                    label="Enter some text"></lightning-input></p>
+        </div>
+    </lightning-card>
+    <lightning-card class="slds-card">
+        <div class="slds-p-around_medium lgc-bg">
+            <p> Value enter is : {memberStatus}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card class="slds-card" label="Getter Setter">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="integer" label="Enter here" onchange={calValue}></lightning-input>
+            <p> Value enter is : {epWatched}</p>
+        </div>
+    </lightning-card>
+
+
+</template>

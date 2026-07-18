@@ -1,0 +1,44 @@
+<template>
+
+    <lightning-card title="Today Action Items">
+        <p class="slds-p-horizontal_small">
+
+            <template for:each={taskList} for:item="eachTask">
+                <div key={eachTask.taskId}>
+                    {eachTask.taskName} - {eachTask.taskPriority} -{eachTask.taskStatus}
+                </div>
+            </template>
+
+        </p>
+        <p slot="footer">All the best Enjoy</p>
+    </lightning-card>
+
+    <lightning-card title="Today Action Items using Iterator">
+        <p class="slds-p-horizontal_small">
+
+            <template iterator:task={taskList}>
+
+                <template lwc:if={task.first}>
+                    Top Priority of thr day:
+                    <p key={task.value.taskId}> <b> - {task.value.taskName} - {task.value.taskPriority} -
+                            {task.value.taskStatus} </b></p>
+                </template>
+
+                <div key={task.taskId}>
+                    {task.value.taskId}> - {task.value.taskName} - {task.value.taskPriority} -
+                    {task.value.taskStatus}
+                </div>
+                <template lwc:if={task.last}>
+                    Low Priority of thr day:
+                    <p key={task.value.taskId}> <i> - {task.value.taskName} - {task.value.taskPriority} -
+                            {task.value.taskStatus} </i></p>
+                </template>
+
+            </template>
+
+        </p>
+        <p slot="footer">All the best Enjoy</p>
+    </lightning-card>
+
+
+</template>

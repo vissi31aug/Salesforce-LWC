@@ -1,0 +1,20 @@
+<template>
+    <lightning-card class="slds-p-around-medium" title="Record">
+        <lightning-record-view-form class="slds-m-around-medium" record-id={recordId} object-api-name={objectApiName}
+            fields={fields}>
+
+            <div class="slds-grid slds-wrap slds-m-around-medium">
+                <div class="slds_col slds_size_1_of_2">
+                    <lightning-output-field field-name="CaseNumber">
+                    </lightning-output-field>
+                </div>
+                <div class="slds_col slds_size_1_of_2 ">
+                    <lightning-output-field field-name="Reason">
+                    </lightning-output-field>
+                </div>
+            </div>
+
+        </lightning-record-view-form>
+    </lightning-card>
+
+</template>
