@@ -1,0 +1,22 @@
+<template>
+
+    <lightning-card title="Custome Case Creator">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" value={subject} onchange={handleSubject} label="Enter Subject"
+                placeholder="type your subject here..." required></lightning-input>
+
+
+            <lightning-combobox name="Priority" label="Priority" value={priority} placeholder="Select Status"
+                options={options} onchange={handlePriority}></lightning-combobox>
+
+            <lightning-textarea name="input1" value={discription} onchange={handleDiscription}
+                label="Enter didcription text"></lightning-textarea>
+        </div>
+
+        <div class="slds-align_absolute-center slds-m-around_medium">
+            <lightning-button type="submit" onclick={handleButton} label="Create Case"
+                variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+
+</template>
