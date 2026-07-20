@@ -1,0 +1,14 @@
+<template>
+
+
+    <lightning-card title="List of Cases">
+        <template for:each={caseList} for:item="caseRecord">
+            <li class="slds-p-around-small" key={caseRecord.Id}>
+                <b> {caseRecord.CaseNumber} </b> - {caseRecord.Subject} - {caseRecord.Status}
+                <br>
+            </li>
+        </template>
+
+    </lightning-card>
+
+</template>
