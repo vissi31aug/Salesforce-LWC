@@ -2,13 +2,14 @@
 
 
     <lightning-card title="List of Cases">
-        <template for:each={caseList} for:item="caseRecord">
-            <li class="slds-p-around-small" key={caseRecord.Id}>
-                <b> {caseRecord.CaseNumber} </b> - {caseRecord.Subject} - {caseRecord.Status}
-                <br>
-            </li>
-        </template>
-
+        <ul class="slds-m-around_medium  slds-list_dotted">
+            <template for:each={caseList} for:item="caseRecord">
+                <li class="slds-p-around-small" key={caseRecord.Id}>
+                    <b> {caseRecord.CaseNumber} </b> - {caseRecord.Subject} - {caseRecord.Status}
+                    <br>
+                </li>
+            </template>
+        </ul>
     </lightning-card>
 
 </template>
