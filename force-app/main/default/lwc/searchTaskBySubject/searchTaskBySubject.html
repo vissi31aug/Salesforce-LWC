@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card title="List of Task by Subject">
+        <ul class="slds-m-around_medium  slds-list_dotted">
+            <template for:each={taskList} for:item="task">
+                <li key={task.id} class="slds-m-around-medium">
+                    {task.Subject} - {task.Status} - {task.Priority}
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+
+</template>
