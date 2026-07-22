@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-card title="Search Task using Imperative Method">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <!-- Default/basic -->
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input value={subject} onchange={onSubjectChange} type="text" label="Enter your Subject"
+                    placeholder="type here..." required></lightning-input>
+            </div>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-button title="Search" label="Search" variant="brand" onclick={searchTask}>
+
+                </lightning-button>
+            </div>
+        </div>
+        <template if:true={flag}>
+            <ul class="slds-m-around_medium  slds-list_dotted">
+                <template for:each={taskList} for:item="task">
+                    <li key={task.id} class="slds-m-around-medium">
+                        {task.Subject} - {task.Status} - {task.Priority}
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+
+</template>
