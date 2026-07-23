@@ -1,0 +1,45 @@
+<template>
+
+    <lightning-card title="Search And Filter" icon-name="utility:search">
+        <div class="slds-p-around_medium">
+
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <div class="slds-cols slds-size_1-of-3 slds-p-around_small">
+                    <lightning-input label="Serach" aria-placeholder="Search using words" value={Serach}
+                        onchange={handleSearch}></lightning-input>
+                </div>
+
+
+                <div class="slds-cols slds-size_1-of-3 slds-p-around_small">
+                    <lightning-combobox name="filterBy" label="FilterBy" value={filterBy}
+                        placeholder="Select Category to filter By" options={categoryOptions} onchange={handleCategory}>
+                    </lightning-combobox>
+                </div>
+
+                <div class="slds-cols slds-size_1-of-3 slds-p-around_small">
+                    <lightning-combobox name="sortBy" label="SortBy" value={sortBy}
+                        placeholder="Select Fields to Sort By" options={sortOptions} onchange={handleSort}>
+                    </lightning-combobox>
+                </div>
+
+            </div>
+
+        </div>
+        <template if:true={filteredData.length}>
+            <div style="height: 300px;" class="slds-p-around_medium">
+                <lightning-datatable key-field="id" data={filteredData} columns={columns} hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+        </template>
+        <div class="slds-p-around_medium">
+            <template if:false={filteredData.length}>
+                <div class="infos slds-p-around_small">
+                    No result found! try changing filter.
+                </div>
+
+            </template>
+        </div>
+    </lightning-card>
+
+</template>
