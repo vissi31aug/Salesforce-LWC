@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>67.0</apiVersion>
-    <isExposed>false</isExposed>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__HomePage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="childObjectApiName" type="String"
+                description="The related object you wan to query"></property>
+
+            <property name="fieldList" type="String"
+                description="The fields of object you wan to query"></property>
+
+            <property name="lookupFieldApiName" type="String"
+                description="The lookup of object you wan to query"></property>
+
+            <property name="limitSize" type="String"
+                description="The number related object you wan to query"></property>
+
+        </targetConfig>
+    </targetConfigs>
+
 </LightningComponentBundle>
